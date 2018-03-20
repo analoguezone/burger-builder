@@ -4,21 +4,25 @@ import BuildControl from './BuildControl/BuildControl'
 
 
 const buildControls = (props)=> {
-  
-  const controls = Object.keys(props.ingredients).map((label,index)=>{
-    return(
-      <BuildControl 
-        label={label} 
-        key={index}
-        className={classes.buildControls}
-      />);
-  });
 
+    const controls= [
+      {label:'Bacon', type:'bacon'},
+      {label:'Cheese', type:'cheese'},
+      {label:'Meat', type:'meat'},
+      {label:'Salad', type:'salad'},
+    ]
 
  return (
-  <div className="classes.buiildControls">
-    {/* <BuildControl label={label} /> */}
-    {controls}
+  <div className={classes.BuildControls}>
+    {/* {buildControls} */}
+    {controls.map(control => 
+      <BuildControl 
+        key={control.label} 
+        label={control.label}
+        disabled={props.disabled[control.type]}
+        removed= {()=>props.ingredientRemoved (control.type)}  
+        added= {()=>props.ingredientAdded (control.type)} 
+      />) }
   </div>
 );
 };
