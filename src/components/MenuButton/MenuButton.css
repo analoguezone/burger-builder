@@ -1,0 +1,25 @@
+.MenuButton{
+  height:100%;
+  width: 35px;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+
+}
+.MenuLine{
+  width:90%;
+  height: 4px;
+  margin:1px 0;
+  background-color:white;
+
+}
+
+@media (min-width: 500px) {
+  .MenuButton {
+      display: none;
+  }
+}
